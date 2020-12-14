@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private var titlesList = mutableListOf<String>()
     private var descsList = mutableListOf<String>()
-    private var authorList = mutableListOf<String>()
+    private var sourcesList = mutableListOf<String>()
     private var linksList = mutableListOf<String>()
     private var imagesList = mutableListOf<String>()
 
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     private fun initView() {
         rv_recyclerView.layoutManager = LinearLayoutManager(applicationContext)
         rv_recyclerView.adapter =
-            NewsAdapter(titlesList, descsList, authorList, linksList, imagesList)
+            NewsAdapter(titlesList, descsList, sourcesList, linksList, imagesList)
     }
 
     private fun hideActionBar() {
@@ -60,13 +60,13 @@ class MainActivity : AppCompatActivity() {
     private fun addItemtoView(
         title: String,
         description: String,
-        author: String,
+        source: String,
         link: String,
         image: String
     ) {
         titlesList.add(title)
         descsList.add(description)
-        authorList.add(author)
+        sourcesList.add(source)
         linksList.add(link)
         imagesList.add(image)
     }
@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
                     addItemtoView(
                         article.title,
                         article.content,
-                        article.author,
+                        article.source.name,
                         article.url,
                         article.urlToImage
                     )
