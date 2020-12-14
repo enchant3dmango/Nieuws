@@ -53,7 +53,7 @@ class NewsAdapter(
         holder.itemDescription.text = descriptions[position]
         holder.itemAuthor.text = authors[position]
 
-
+        holder.itemTitle.maxLines = 3
         holder.itemDescription.maxLines = 2
 
         Glide.with(holder.itemImage)
